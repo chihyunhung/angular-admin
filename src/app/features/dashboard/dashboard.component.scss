@@ -1,0 +1,67 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+
+  mat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    mat-icon {
+      font-size: 2.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      color: #1e88e5;
+    }
+
+    .label {
+      margin: 0;
+      color: #6b7280;
+    }
+
+    h2 {
+      margin: 0.25rem 0;
+    }
+  }
+}
+
+.recent-users mat-card {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.status-badge {
+  padding: 0.1rem 0.5rem;
+  border-radius: 12px;
+  background-color: rgba(76, 175, 80, 0.15);
+  color: #388e3c;
+
+  &.inactive {
+    background-color: rgba(229, 57, 53, 0.15);
+    color: #c62828;
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #9ca3af;
+
+  mat-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+}

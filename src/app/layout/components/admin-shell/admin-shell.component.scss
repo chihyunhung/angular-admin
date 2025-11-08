@@ -1,0 +1,66 @@
+.shell {
+  min-height: 100vh;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.menu-button {
+  margin-right: 1rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.user-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #1e88e5;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  h4 {
+    margin: 0 0 0.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: #6b7280;
+  }
+
+  mat-chip {
+    margin-top: 0.75rem;
+  }
+}
+
+.active-link {
+  background-color: rgba(30, 136, 229, 0.1);
+}
+
+.loading-state {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

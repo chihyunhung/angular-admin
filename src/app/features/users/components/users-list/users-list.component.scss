@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0.25rem 0 0;
+    color: #6b7280;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.status {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background-color: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+
+  &.inactive {
+    background-color: rgba(229, 57, 53, 0.15);
+    color: #c62828;
+  }
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #9ca3af;
+
+  mat-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+}

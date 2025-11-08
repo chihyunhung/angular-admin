@@ -1,0 +1,21 @@
+mat-card {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+}

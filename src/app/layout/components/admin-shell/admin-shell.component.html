@@ -1,0 +1,61 @@
+<ng-container *ngIf="user$ | async as user; else loading">
+  <mat-sidenav-container class="shell">
+    <mat-sidenav #drawer mode="side" opened>
+      <div class="user-card">
+        <div class="avatar">
+          {{ (user.displayName || user.email || '?') | slice:0:1 | uppercase }}
+        </div>
+        <div class="details">
+          <h4>{{ user.displayName || user.email }}</h4>
+          <p>{{ user.email }}</p>
+          <mat-chip-list>
+            <mat-chip color="primary" selected *ngFor="let role of user.roles">
+              {{ role }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+
+      <mat-nav-list>
+        <ng-container *ngFor="let item of navItems">
+          <a
+            mat-list-item
+            *ngIf="canShow(item, user)"
+            [routerLink]="item.route"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+            <span>{{ item.label }}</span>
+          </a>
+        </ng-container>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button class="menu-button" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <span>後台管理中心</span>
+        <span class="spacer"></span>
+
+        <button mat-button (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          登出
+        </button>
+      </mat-toolbar>
+
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>
+
+<ng-template #loading>
+  <div class="loading-state">
+    <mat-progress-spinner diameter="60" mode="indeterminate"></mat-progress-spinner>
+  </div>
+</ng-template>
